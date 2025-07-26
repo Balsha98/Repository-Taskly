@@ -1,0 +1,79 @@
+/* OVERVIEW GRID */
+.div-overview-grid-container {
+    display: grid;
+    grid-template-columns: 35fr 65fr;
+    column-gap: 2.4rem;
+    height: 100%;
+}
+
+/* OVERVIEW GRID SIDEBAR */
+.div-overview-grid-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.2rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.8rem;
+}
+
+/* OVERVIEW GRID SIDEBAR TASK LIST CONTAINER */
+.div-overview-grid-sidebar-task-list-container {
+    flex-grow: 1;
+}
+
+/* OVERVIEW GRID SIDEBAR TASK LIST */
+.overview-grid-sidebar-task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.overview-grid-sidebar-task-list::-webkit-scrollbar {
+    display: none;
+}
+
+/* OVERVIEW GRID SIDEBAR TASK LIST ITEM */
+.overview-grid-sidebar-task-list-item {
+    position: relative;
+    padding: 0.8rem 1.6rem;
+    transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.overview-grid-sidebar-task-list-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.2rem;
+    height: 100%;
+    background-color: var(--primary);
+    border-radius: 0 0.4rem 0.4rem 0;
+}
+
+.overview-grid-sidebar-task-list-item:hover {
+    opacity: var(--opacity-lg);
+}
+
+.overview-grid-sidebar-task-list-item p {
+    font-size: 1.4rem;
+}
+
+.overview-grid-sidebar-task-list-item span {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* OVERVIEW GRID DETAILS */
+.div-overview-grid-details {
+    padding: 1.2rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.8rem;
+}
+
+/* OVERVIEW GRID DETAILS HEADER */
+.div-overview-grid-details > header {
+    text-align: right;
+}

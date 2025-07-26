@@ -1,0 +1,12 @@
+:root {
+    --primary: #37b24d;
+    --primary-shade: #2b8a3e;
+    --gray-shade: #212529;
+    --white: #fff;
+
+    --shadow-sm: rgba(0, 0, 0, 0.1);
+
+    --opacity-sm: 0.1;
+    --opacity-md: 0.3;
+    --opacity-lg: 0.5;
+}

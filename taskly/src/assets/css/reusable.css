@@ -1,0 +1,54 @@
+/* HEADING */
+.heading-secondary {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+/* LINE CLAMP */
+.line-clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.clamp-1 {
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+}
+
+.clamp-2 {
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+}
+
+/* BUTTON */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+    padding: 0.8rem 0;
+    font-size: 1.2rem;
+    color: var(--white);
+    border-radius: 0.4rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn ion-icon {
+    color: inherit;
+}
+
+.btn span {
+    font-size: inherit;
+    color: inherit;
+}
+
+/* BUTTON TYPES */
+.btn-primary {
+    background-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-shade);
+}

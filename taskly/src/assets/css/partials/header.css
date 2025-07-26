@@ -1,0 +1,48 @@
+/* PAGE HEADER */
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem;
+    box-shadow: 0 0.4rem 0.8rem var(--shadow-sm);
+    border-radius: 0.8rem;
+}
+
+/* PAGE LOGO */
+.div-page-logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.div-page-logo-container img {
+    width: 2.4rem;
+}
+
+.div-page-logo-container span {
+    font-size: 1.8rem;
+}
+
+/* PAGE NAVIGATION BUTTON LIST */
+.page-navigation-btn-list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.6rem;
+}
+
+/* PAGE NAVIGATION BUTTON LIST ITEM */
+.page-navigation-btn-list-item button {
+    font-size: 1.2rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.page-navigation-btn-list-item button:hover {
+    color: var(--primary-shade);
+}
+
+/* PAGE NAVIGATION BUTTON */
+button.active-btn {
+    color: var(--primary);
+}
