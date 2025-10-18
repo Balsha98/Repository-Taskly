@@ -5,6 +5,8 @@
     --white: #fff;
 
     --shadow-sm: rgba(0, 0, 0, 0.1);
+    --shadow-md: rgba(0, 0, 0, 0.3);
+    --shadow-lg: rgba(0, 0, 0, 0.5);
 
     --opacity-sm: 0.1;
     --opacity-md: 0.3;

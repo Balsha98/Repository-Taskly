@@ -38,7 +38,8 @@
 .overview-grid-sidebar-task-list-item {
     position: relative;
     padding: 0.8rem 1.6rem;
-    transition: opacity 0.3s ease-in-out;
+    border-radius: 0 0.4rem 0.4rem 0;
+    transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
 
@@ -54,16 +55,27 @@
 }
 
 .overview-grid-sidebar-task-list-item:hover {
+    background-color: var(--primary);
     opacity: var(--opacity-lg);
 }
 
 .overview-grid-sidebar-task-list-item p {
     font-size: 1.4rem;
+    transition: inherit;
+}
+
+.overview-grid-sidebar-task-list-item:hover p {
+    color: var(--white);
 }
 
 .overview-grid-sidebar-task-list-item span {
     font-size: 1.2rem;
     font-style: italic;
+    transition: inherit;
+}
+
+.overview-grid-sidebar-task-list-item:hover span {
+    color: var(--white);
 }
 
 /* OVERVIEW GRID DETAILS */
