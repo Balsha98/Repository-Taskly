@@ -43,6 +43,11 @@
     cursor: pointer;
 }
 
+.overview-grid-sidebar-task-list-item:hover {
+    background-color: var(--primary);
+    opacity: var(--opacity-lg);
+}
+
 .overview-grid-sidebar-task-list-item::before {
     content: "";
     position: absolute;
@@ -52,11 +57,11 @@
     height: 100%;
     background-color: var(--primary);
     border-radius: 0 0.4rem 0.4rem 0;
+    transition: inherit;
 }
 
-.overview-grid-sidebar-task-list-item:hover {
-    background-color: var(--primary);
-    opacity: var(--opacity-lg);
+.overview-grid-sidebar-task-list-item:hover::before {
+    background-color: var(--primary-shade);
 }
 
 .overview-grid-sidebar-task-list-item p {
