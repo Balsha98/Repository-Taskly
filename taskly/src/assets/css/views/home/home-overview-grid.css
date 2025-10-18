@@ -1,13 +1,13 @@
-/* OVERVIEW GRID */
-.div-overview-grid-container {
+/* HOME OVERVIEW GRID */
+.div-home-overview-grid-container {
     display: grid;
     grid-template-columns: 35fr 65fr;
     column-gap: 2.4rem;
     height: 100%;
 }
 
-/* OVERVIEW GRID SIDEBAR */
-.div-overview-grid-sidebar {
+/* HOME OVERVIEW GRID SIDEBAR */
+.div-home-overview-grid-sidebar {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
@@ -16,13 +16,13 @@
     border-radius: 0.8rem;
 }
 
-/* OVERVIEW GRID SIDEBAR TASK LIST CONTAINER */
-.div-overview-grid-sidebar-task-list-container {
+/* HOME OVERVIEW GRID SIDEBAR TASK LIST CONTAINER */
+.div-home-overview-grid-sidebar-task-list-container {
     flex-grow: 1;
 }
 
-/* OVERVIEW GRID SIDEBAR TASK LIST */
-.overview-grid-sidebar-task-list {
+/* HOME OVERVIEW GRID SIDEBAR TASK LIST */
+.home-overview-grid-sidebar-task-list {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
@@ -30,12 +30,12 @@
     overflow-y: scroll;
 }
 
-.overview-grid-sidebar-task-list::-webkit-scrollbar {
+.home-overview-grid-sidebar-task-list::-webkit-scrollbar {
     display: none;
 }
 
-/* OVERVIEW GRID SIDEBAR TASK LIST ITEM */
-.overview-grid-sidebar-task-list-item {
+/* HOME OVERVIEW GRID SIDEBAR TASK LIST ITEM */
+.home-overview-grid-sidebar-task-list-item {
     position: relative;
     padding: 0.8rem 1.6rem;
     border-radius: 0 0.4rem 0.4rem 0;
@@ -43,12 +43,12 @@
     cursor: pointer;
 }
 
-.overview-grid-sidebar-task-list-item:hover {
+.home-overview-grid-sidebar-task-list-item:hover {
     background-color: var(--primary);
     opacity: var(--opacity-lg);
 }
 
-.overview-grid-sidebar-task-list-item::before {
+.home-overview-grid-sidebar-task-list-item::before {
     content: "";
     position: absolute;
     top: 0;
@@ -60,37 +60,37 @@
     transition: inherit;
 }
 
-.overview-grid-sidebar-task-list-item:hover::before {
+.home-overview-grid-sidebar-task-list-item:hover::before {
     background-color: var(--primary-shade);
 }
 
-.overview-grid-sidebar-task-list-item p {
+.home-overview-grid-sidebar-task-list-item p {
     font-size: 1.4rem;
     transition: inherit;
 }
 
-.overview-grid-sidebar-task-list-item:hover p {
+.home-overview-grid-sidebar-task-list-item:hover p {
     color: var(--white);
 }
 
-.overview-grid-sidebar-task-list-item span {
+.home-overview-grid-sidebar-task-list-item span {
     font-size: 1.2rem;
     font-style: italic;
     transition: inherit;
 }
 
-.overview-grid-sidebar-task-list-item:hover span {
+.home-overview-grid-sidebar-task-list-item:hover span {
     color: var(--white);
 }
 
-/* OVERVIEW GRID DETAILS */
-.div-overview-grid-details {
+/* HOME OVERVIEW GRID DETAILS */
+.div-home-overview-grid-details {
     padding: 1.2rem;
     box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
     border-radius: 0.8rem;
 }
 
-/* OVERVIEW GRID DETAILS HEADER */
-.div-overview-grid-details > header {
+/* HOME OVERVIEW GRID DETAILS HEADER */
+.div-home-overview-grid-details > header {
     text-align: right;
 }
