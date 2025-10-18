@@ -1,0 +1,41 @@
+/* POPUP CONTAINER */
+.div-popup-add-task-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--shadow-sm);
+    border-radius: 0.8rem;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    z-index: -1;
+}
+
+.show-popup {
+    opacity: 1;
+    z-index: 9999;
+}
+
+/* POPUP MODAL */
+.div-popup-add-task-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    box-shadow: 0 0.4rem 1.2rem var(--shadow-sm);
+    transform: translate(-50%, -50%);
+}
+
+/* FORM ADD TASK */
+.form-add-task {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+    padding: 1.2rem;
+    background-color: var(--white);
+    border-radius: 0.8rem;
+    z-index: 2;
+}
