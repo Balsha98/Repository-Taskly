@@ -4,6 +4,11 @@
     --gray-shade: #212529;
     --white: #fff;
 
+    --danger: #f03e3e;
+    --danger-shade: #c92a2a;
+    --warning: "";
+    --warning-shade: "";
+
     --shadow-sm: rgba(0, 0, 0, 0.1);
     --shadow-md: rgba(0, 0, 0, 0.3);
     --shadow-lg: rgba(0, 0, 0, 0.5);
