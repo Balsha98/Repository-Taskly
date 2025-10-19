@@ -2,7 +2,7 @@ export default function NavigationBtnListItem({ viewID, activeView, onSwitchView
     const handleSwitchView = (e) => onSwitchView(+e.target.dataset.viewId);
 
     return (
-        <li className="page-navigation-btn-list-item">
+        <li className="page-navigation-btns-list-item">
             <button
                 className={`${activeView === viewID ? "active-btn" : ""}`}
                 onClick={handleSwitchView}

@@ -16,6 +16,20 @@ export default function AddTaskPopup({ showAddTaskPopup, onShowAddTaskPopup, onU
         const taskTitle = inputTaskTitle.current.value;
         const taskDescription = inputTaskDescription.current.value;
 
+        onUpdateTasks((tasks) => {
+            const date = new Date();
+            const formattedDay = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
+            const formattedMonth = date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
+            const formattedDate = `${formattedMonth}/${formattedDay}/${date.getFullYear()}`;
+
+            const newTask = { id: 1, title: taskTitle, description: taskDescription, date: formattedDate };
+            const updatedTasks = [...tasks, newTask];
+
+            localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+
+            return updatedTasks;
+        });
+
         onShowAddTaskPopup();
     }
 

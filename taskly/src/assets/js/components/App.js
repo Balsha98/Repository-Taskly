@@ -11,7 +11,7 @@ import "../../css/reusable.css";
 export default function App() {
     const [activeView, setActiveView] = useState(1);
     const [showAddTaskPopup, setShowAddTaskPopup] = useState(false);
-    const [tasks, setTasks] = useState(() => localStorage.getItem("tasks"));
+    const [tasks, setTasks] = useState(() => JSON.parse(localStorage.getItem("tasks")) ?? []);
 
     const handleShowAddTaskPopup = (e) => {
         if (e) {

@@ -1,7 +1,7 @@
 // IMPORTED COMPONENTS
 import AddTaskPopup from "../../partials/popups/AddTaskPopup";
-import NoTaskListSign from "../../partials/signs/NoTaskListSign";
-import HomeTaskList from "../../partials/lists/home/HomeTaskList";
+import NotTasksListSign from "../../partials/signs/NoTasksListSign";
+import HomeTasksList from "../../partials/lists/home/HomeTasksList";
 import NoTaskSelectedSign from "../../partials/signs/NoTaskSelectedSign";
 // IMPORTED STYLES
 import "../../../../css/views/home/home-overview-grid.css";
@@ -22,7 +22,7 @@ export default function HomeOverviewGrid({ showAddTaskPopup, onShowAddTaskPopup,
                         <h2 className="heading-secondary">Tasks Overview</h2>
                     </header>
                     <div className="div-home-overview-grid-sidebar-task-list-container">
-                        {tasks ? <HomeTaskList tasks={tasks} /> : <NoTaskListSign />}
+                        {tasks.length ? <HomeTasksList tasks={tasks} /> : <NotTasksListSign />}
                     </div>
                     <footer>
                         <button className="btn btn-primary btn-add-task" onClick={onShowAddTaskPopup} data-toggle="1">
