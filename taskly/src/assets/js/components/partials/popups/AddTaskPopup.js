@@ -1,27 +1,51 @@
+// IMPORTED DEPENDENCIES
+import { useRef } from "react";
 // IMPORTED STYLES
-import "../../../../css/partials/popup-add-task.css";
+import "../../../../css/partials/popups/popup-add-task.css";
 // IMPORTED ICONS
-import close from "../../../../media/icons/x.svg";
-import check from "../../../../media/icons/check.svg";
+import iconCloseSrc from "../../../../media/icons/x.svg";
+import iconCheckSrc from "../../../../media/icons/check.svg";
 
-export default function AddTaskPopup({ showAddTaskPopup, onShowAddTaskPopup }) {
+export default function AddTaskPopup({ showAddTaskPopup, onShowAddTaskPopup, onUpdateTasks }) {
+    const inputTaskTitle = useRef(null);
+    const inputTaskDescription = useRef(null);
+
+    function handleAddNewTask(e) {
+        e.preventDefault();
+
+        const taskTitle = inputTaskTitle.current.value;
+        const taskDescription = inputTaskDescription.current.value;
+
+        onShowAddTaskPopup();
+    }
+
     return (
         <div className={`div-popup-add-task-container ${showAddTaskPopup && "show-popup"}`}>
             <div className="div-popup-add-task-modal">
                 <button className="popup-btn-close btn-icon btn-danger" onClick={onShowAddTaskPopup} data-toggle="0">
-                    <ion-icon src={close}></ion-icon>
+                    <ion-icon src={iconCloseSrc}></ion-icon>
                 </button>
-                <form className="form-add-task">
+                <form className="form-add-task" onSubmit={handleAddNewTask}>
                     <div className="div-input-container">
                         <label>Task Title</label>
-                        <input id="task-title" name="task-name" type="text" placeholder="Enter your title here..." />
+                        <input
+                            ref={inputTaskTitle}
+                            id="task-title"
+                            name="task-name"
+                            type="text"
+                            placeholder="Enter your title here..."
+                        />
                     </div>
                     <div className="div-input-container">
                         <label>Task Description</label>
-                        <textarea rows="8" placeholder="Your description goes here..."></textarea>
+                        <textarea
+                            ref={inputTaskDescription}
+                            placeholder="Your description goes here..."
+                            rows="8"
+                        ></textarea>
                     </div>
                     <button className="btn btn-primary btn-confirm-task">
-                        <ion-icon src={check}></ion-icon>
+                        <ion-icon src={iconCheckSrc}></ion-icon>
                         <span>Confirm Task</span>
                     </button>
                 </form>
