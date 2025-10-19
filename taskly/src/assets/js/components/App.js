@@ -2,7 +2,7 @@
 import { useState } from "react";
 // IMPORTED COMPONENTS
 import Header from "./partials/Header";
-import OverviewGrid from "./views/home/HomeOverviewGrid";
+import HomeOverviewGrid from "./views/home/HomeOverviewGrid";
 // IMPORTED STYLES
 import "../../css/variables.css";
 import "../../css/general.css";
@@ -11,16 +11,26 @@ import "../../css/reusable.css";
 export default function App() {
     const [activeView, setActiveView] = useState(1);
     const [showAddTaskPopup, setShowAddTaskPopup] = useState(false);
+    const [tasks, setTasks] = useState(() => localStorage.getItem("tasks"));
 
     const handleShowAddTaskPopup = (e) => {
-        const btnParent = e.target.closest("button");
-        setShowAddTaskPopup(+btnParent.dataset.toggle === 1);
+        if (e) {
+            const btnParent = e.target.closest("button");
+            return setShowAddTaskPopup(+btnParent.dataset.toggle === 1);
+        }
+
+        setShowAddTaskPopup((value) => !value);
     };
 
     return (
         <>
             <Header activeView={activeView} onSwitchView={setActiveView} />
-            <OverviewGrid showAddTaskPopup={showAddTaskPopup} onShowAddTaskPopup={handleShowAddTaskPopup} />
+            <HomeOverviewGrid
+                showAddTaskPopup={showAddTaskPopup}
+                onShowAddTaskPopup={handleShowAddTaskPopup}
+                tasks={tasks}
+                onUpdateTasks={setTasks}
+            />
         </>
     );
 }
