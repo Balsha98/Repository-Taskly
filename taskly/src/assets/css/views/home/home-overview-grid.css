@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: 35fr 65fr;
     column-gap: 2.4rem;
-    height: 100%;
+    height: fit-content;
 }
 
 /* HOME OVERVIEW GRID SIDEBAR */
@@ -18,7 +18,9 @@
 
 /* HOME OVERVIEW GRID SIDEBAR TASK LIST CONTAINER */
 .div-home-overview-grid-sidebar-task-list-container {
+    position: relative;
     flex-grow: 1;
+    height: calc((5 * 4.8rem) + (4 * 0.8rem));
 }
 
 /* HOME OVERVIEW GRID SIDEBAR TASK LIST */
@@ -26,7 +28,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
-    height: 100%;
+    height: inherit;
     overflow-y: scroll;
 }
 
@@ -36,7 +38,12 @@
 
 /* HOME OVERVIEW GRID SIDEBAR TASK LIST ITEM */
 .home-overview-grid-sidebar-task-list-item {
+    flex-shrink: 0;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 4.8rem;
     padding: 0.8rem 1.6rem;
     border-radius: 0 0.4rem 0.4rem 0;
     transition: all 0.3s ease-in-out;
@@ -85,6 +92,7 @@
 
 /* HOME OVERVIEW GRID DETAILS */
 .div-home-overview-grid-details {
+    position: relative;
     padding: 1.2rem;
     box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
     border-radius: 0.8rem;
