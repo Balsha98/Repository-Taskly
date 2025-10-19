@@ -22,7 +22,8 @@ export default function AddTaskPopup({ showAddTaskPopup, onShowAddTaskPopup, onU
             const formattedMonth = date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
             const formattedDate = `${formattedMonth}/${formattedDay}/${date.getFullYear()}`;
 
-            const newTask = { id: 1, title: taskTitle, description: taskDescription, date: formattedDate };
+            const taskID = tasks.length ? +tasks[tasks.length - 1].id + 1 : 1;
+            const newTask = { id: taskID, title: taskTitle, description: taskDescription, date: formattedDate };
             const updatedTasks = [...tasks, newTask];
 
             localStorage.setItem("tasks", JSON.stringify(updatedTasks));
