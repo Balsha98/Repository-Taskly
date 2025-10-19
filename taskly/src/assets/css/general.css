@@ -23,8 +23,7 @@ html {
     gap: 2.4rem;
     width: 100%;
     max-width: 80rem;
-    height: 100vh;
-    max-height: 80%;
+    height: fit-content;
     transform: translate(-50%, -50%);
 }
 
