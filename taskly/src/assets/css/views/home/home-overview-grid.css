@@ -47,15 +47,11 @@
     height: 4.8rem;
     padding: 0.8rem 1.6rem;
     border-radius: 0 0.4rem 0.4rem 0;
-    transition: all 0.3s ease-in-out;
+    /* transition: all 0.3s ease-in-out; */
     cursor: pointer;
 }
 
-.home-overview-grid-sidebar-task-list-item:hover {
-    background-color: var(--primary);
-    opacity: var(--opacity-lg);
-}
-
+/* HOME OVERVIEW GRID SIDEBAR TASK LIST ITEM BEFORE */
 .home-overview-grid-sidebar-task-list-item::before {
     content: "";
     position: absolute;
@@ -65,35 +61,47 @@
     height: 100%;
     background-color: var(--primary);
     border-radius: 0 0.4rem 0.4rem 0;
-    transition: inherit;
+    /* transition: all 0.3s ease-in-out; */
 }
 
-.home-overview-grid-sidebar-task-list-item:hover::before {
+.home-overview-grid-sidebar-task-list-item:hover::before,
+.active-task-list-item::before {
+    background-color: var(--primary-shade);
+}
+
+/* HOME OVERVIEW GRID SIDEBAR TASK LIST ITEM AFTER */
+.home-overview-grid-sidebar-task-list-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0.8rem;
+    aspect-ratio: 1 / 1;
+    background-color: var(--white);
+    border-radius: 50%;
+    /* transition: all 0.3s ease-in-out; */
+}
+
+.home-overview-grid-sidebar-task-list-item:hover::after,
+.active-task-list-item::after {
     background-color: var(--primary-shade);
 }
 
 .home-overview-grid-sidebar-task-list-item p {
     font-size: 1.4rem;
-    transition: inherit;
-}
-
-.home-overview-grid-sidebar-task-list-item:hover p {
-    color: var(--white);
 }
 
 .home-overview-grid-sidebar-task-list-item span {
     font-size: 1.2rem;
     font-style: italic;
-    transition: inherit;
-}
-
-.home-overview-grid-sidebar-task-list-item:hover span {
-    color: var(--white);
 }
 
 /* HOME OVERVIEW GRID DETAILS */
 .div-home-overview-grid-details {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
     padding: 1.2rem;
     box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
     border-radius: 0.8rem;
@@ -101,5 +109,32 @@
 
 /* HOME OVERVIEW GRID DETAILS HEADER */
 .div-home-overview-grid-details > header {
-    text-align: right;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.div-home-overview-grid-details > header button {
+    font-size: 1.6rem;
+    color: var(--gray-shade);
+}
+
+/* FORM EDIT TASK */
+.form-edit-task {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    border-radius: 0.8rem;
+    z-index: 2;
+}
+
+/* FORM CONTROL BUTTONS CONTAINER */
+.div-form-control-btns-container {
+    display: grid;
+    column-gap: 1.2rem;
+    width: 100%;
 }
