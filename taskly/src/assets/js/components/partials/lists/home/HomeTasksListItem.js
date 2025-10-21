@@ -1,3 +1,6 @@
+// IMPORTED ICONS
+import iconCheckSrc from "../../../../../media/icons/check.svg";
+
 export default function HomeTasksListItem({ task, selectedTask, onSetSelectedTask }) {
     const handleSelectedTask = () => onSetSelectedTask(task);
 
@@ -13,7 +16,11 @@ export default function HomeTasksListItem({ task, selectedTask, onSetSelectedTas
                 <p>{task.title ?? "Title"}</p>
                 <span>Created On: {task.date ?? "Date"}</span>
             </div>
-            {task.resolved && <span className="span-task-list-item-resolved">&nbsp;</span>}
+            {task.resolved && (
+                <span className="span-resolved-task-list-item">
+                    <ion-icon src={iconCheckSrc}></ion-icon>
+                </span>
+            )}
         </li>
     );
 }

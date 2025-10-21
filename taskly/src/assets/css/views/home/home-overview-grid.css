@@ -52,6 +52,11 @@
     cursor: pointer;
 }
 
+.home-overview-grid-sidebar-task-list-item:hover,
+.active-task-list-item {
+    opacity: var(--opacity-md);
+}
+
 /* HOME OVERVIEW GRID SIDEBAR TASK LIST ITEM BEFORE */
 .home-overview-grid-sidebar-task-list-item::before {
     content: "";
@@ -65,29 +70,6 @@
     /* transition: all 0.3s ease-in-out; */
 }
 
-.home-overview-grid-sidebar-task-list-item:hover::before,
-.active-task-list-item::before {
-    background-color: var(--primary-shade);
-}
-
-/* HOME OVERVIEW GRID SIDEBAR TASK LIST ITEM AFTER */
-.home-overview-grid-sidebar-task-list-item::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 0.8rem;
-    aspect-ratio: 1 / 1;
-    background-color: var(--white);
-    border-radius: 50%;
-    /* transition: all 0.3s ease-in-out; */
-}
-
-.home-overview-grid-sidebar-task-list-item:hover::after,
-.active-task-list-item::after {
-    background-color: var(--primary-shade);
-}
-
 /* HOME OVERVIEW GRID SIDEBAR TASK LIST ITEM DATA CONTAINER */
 .div-home-overview-grid-sidebar-task-list-item-data-container p {
     font-size: 1.4rem;
@@ -98,20 +80,16 @@
     font-style: italic;
 }
 
-/* SPAN TASK LIST ITEM RESOLVED */
-.span-task-list-item-resolved {
+/* SPAN RESOLVED TASK LIST ITEM  */
+.span-resolved-task-list-item {
     position: absolute;
-    bottom: -1.2rem;
-    right: -1.2rem;
-    width: 2.4rem;
-    height: 2.4rem;
-    background-color: var(--primary);
-    transform: rotate(45deg);
+    bottom: 0.4rem;
+    right: 0.4rem;
 }
 
-.home-overview-grid-sidebar-task-list-item:hover .span-task-list-item-resolved,
-.active-task-list-item .span-task-list-item-resolved {
-    background-color: var(--primary-shade);
+.span-resolved-task-list-item ion-icon {
+    font-size: 1.6rem;
+    color: var(--primary);
 }
 
 /* HOME OVERVIEW GRID DETAILS */
