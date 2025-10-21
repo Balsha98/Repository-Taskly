@@ -3,13 +3,29 @@
     position: absolute;
     top: 0;
     right: 2.4rem;
+    width: 3.2rem;
     font-size: 1.4rem;
+    color: var(--white);
+    background-color: var(--danger);
     transform: translateY(-1.2rem);
     z-index: 1;
 }
 
 .popup-btn-close:hover {
     transform: translateY(calc(-100% + 0.4rem));
+}
+
+/* DISPLAY GRID TEMPLATE */
+.grid-2-columns {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3-columns {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4-columns {
+    grid-template-columns: repeat(4, 1fr);
 }
 
 /* HEADING */
@@ -42,6 +58,11 @@
     gap: 0.4rem;
 }
 
+/* TEXTAREA CONTAINER */
+.div-textarea-container {
+    flex-grow: 1;
+}
+
 /* INPUT CONTAINER LABEL */
 .div-input-container label {
     position: relative;
@@ -66,7 +87,16 @@
     padding: 0.8rem;
     box-shadow: inset 0 0 0 0.1rem var(--primary);
     border-radius: 0.4rem;
-    transition: box-shadow 0.3s ease-in-out;
+    /* transition: box-shadow 0.3s ease-in-out; */
+}
+
+.div-textarea-container textarea {
+    height: 100%;
+}
+
+.invalid-input-container input,
+.invalid-input-container textarea {
+    box-shadow: inset 0 0 0 0.1rem var(--danger);
 }
 
 /* BUTTON STANDARD */
@@ -80,7 +110,7 @@
     font-size: 1.2rem;
     color: var(--white);
     border-radius: 0.4rem;
-    transition: all 0.3s ease-in-out;
+    /* transition: all 0.3s ease-in-out; */
 }
 
 /* BUTTON ICON */
@@ -88,11 +118,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 3.2rem;
     aspect-ratio: 1 / 1;
-    color: var(--white);
     border-radius: 0.4rem;
-    transition: all 0.3s ease-in-out;
+    /* transition: all 0.3s ease-in-out; */
 }
 
 .btn ion-icon,
@@ -120,4 +148,8 @@
 
 .btn-danger:hover {
     background-color: var(--danger-shade);
+}
+
+.btn-icon:hover {
+    opacity: var(--opacity-xl);
 }
