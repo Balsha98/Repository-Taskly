@@ -3,6 +3,8 @@ import { useState } from "react";
 // IMPORTED COMPONENTS
 import Header from "./partials/Header";
 import HomeOverviewGrid from "./views/home/HomeOverviewGrid";
+// IMPORTED HELPERS
+import { fetchAndDecode } from "../helpers/Encoder";
 // IMPORTED STYLES
 import "../../css/variables.css";
 import "../../css/general.css";
@@ -11,7 +13,7 @@ import "../../css/reusable.css";
 export default function App() {
     const [activeView, setActiveView] = useState(1);
     const [showAddTaskPopup, setShowAddTaskPopup] = useState(false);
-    const [tasks, setTasks] = useState(() => JSON.parse(localStorage.getItem("tasks")) ?? []);
+    const [tasks, setTasks] = useState(() => fetchAndDecode("tasks") ?? []);
 
     const handleShowAddTaskPopup = (e) => {
         if (e) {

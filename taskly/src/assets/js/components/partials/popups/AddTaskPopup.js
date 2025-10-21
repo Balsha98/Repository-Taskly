@@ -1,5 +1,7 @@
 // IMPORTED DEPENDENCIES
 import { useState } from "react";
+// IMPORTED HELPERS
+import { encodeAndSave } from "../../../helpers/Encoder";
 // IMPORTED STYLES
 import "../../../../css/partials/popups/popup-add-task.css";
 // IMPORTED ICONS
@@ -28,10 +30,16 @@ export default function AddTaskPopup({ showAddTaskPopup, onShowAddTaskPopup, onU
             const formattedDate = `${formattedMonth}/${formattedDay}/${date.getFullYear()}`;
 
             const taskID = tasks.length ? +tasks[tasks.length - 1].id + 1 : 1;
-            const newTask = { id: taskID, title: taskTitle, description: taskDescription, date: formattedDate };
+            const newTask = {
+                id: taskID,
+                title: taskTitle,
+                description: taskDescription,
+                date: formattedDate,
+                resolved: false,
+            };
             const updatedTasks = [...tasks, newTask];
 
-            localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+            encodeAndSave("tasks", updatedTasks);
 
             return updatedTasks;
         });
