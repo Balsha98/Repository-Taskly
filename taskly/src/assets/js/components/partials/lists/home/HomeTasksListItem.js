@@ -1,8 +1,18 @@
-export default function HomeTasksListItem({ taskID, taskTitle, taskDate }) {
+export default function HomeTasksListItem({ task, selectedTask, onSetSelectedTask }) {
+    function handleSelectedTask() {
+        onSetSelectedTask(task);
+    }
+
     return (
-        <li className="home-overview-grid-sidebar-task-list-item" data-task-id={taskID}>
-            <p>{taskTitle ?? "Title"}</p>
-            <span>Created On: {taskDate ?? "Date"}</span>
+        <li
+            className={`home-overview-grid-sidebar-task-list-item ${
+                task.id === selectedTask?.id ? "active-task-list-item" : ""
+            }`}
+            onClick={handleSelectedTask}
+            data-task-id={task.id}
+        >
+            <p>{task.title ?? "Title"}</p>
+            <span>Created On: {task.date ?? "Date"}</span>
         </li>
     );
 }
