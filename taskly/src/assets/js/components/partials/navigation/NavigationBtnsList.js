@@ -2,7 +2,7 @@
 import NavigationBtnListItem from "./NavigationBtnsListItem";
 
 export default function NavigationBtnList({ activeView, onSwitchView }) {
-    const navBtnLabels = ["Home", "Tasks", "Profile"];
+    const navBtnLabels = ["Home", "Tasks"];
 
     return (
         <ul className="page-navigation-btns-list">
