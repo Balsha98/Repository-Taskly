@@ -150,6 +150,14 @@
     background-color: var(--danger-shade);
 }
 
+.btn-warning {
+    background-color: var(--warning);
+}
+
+.btn-warning:hover {
+    background-color: var(--warning-shade);
+}
+
 .btn-icon:hover {
     opacity: var(--opacity-xl);
 }
