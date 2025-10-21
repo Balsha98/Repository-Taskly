@@ -1,8 +1,12 @@
 // IMPORTED DEPENDENCIES
-import { useState } from "react";
+import { useEffect, useState } from "react";
+// IMPORTED HELPERS
+import { encodeAndSave } from "../../../helpers/Encoder";
 // IMPORTED ICONS
 import iconTrash2Src from "../../../../media/icons/trash-2.svg";
 import iconEdit2Src from "../../../../media/icons/edit-2.svg";
+import iconCloseSrc from "../../../../media/icons/x.svg";
+import iconCheckSrc from "../../../../media/icons/check.svg";
 
 export default function HomeTaskDetails({ selectedTask, onSetSelectedTask, onUpdateTasks }) {
     const [taskTitle, setTaskTitle] = useState(selectedTask.title);
@@ -18,7 +22,7 @@ export default function HomeTaskDetails({ selectedTask, onSetSelectedTask, onUpd
         onUpdateTasks((tasks) => {
             const filteredTasks = tasks.filter((task) => selectedTask.id !== task.id);
 
-            localStorage.setItem("tasks", JSON.stringify(filteredTasks));
+            encodeAndSave("tasks", filteredTasks);
 
             return filteredTasks;
         });
@@ -33,19 +37,47 @@ export default function HomeTaskDetails({ selectedTask, onSetSelectedTask, onUpd
             const updatedTasks = tasks.map((task) =>
                 selectedTask.id === task.id
                     ? {
-                          id: task.id,
+                          id: selectedTask.id,
                           title: taskTitle,
                           description: taskDescription,
-                          date: task.date,
+                          date: selectedTask.date,
+                          resolved: selectedTask.resolved,
                       }
                     : task
             );
 
-            localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+            encodeAndSave("tasks", updatedTasks);
 
             return updatedTasks;
         });
     }
+
+    function handleResolveTask(e) {
+        const isResolved = +e.target.dataset.resolved === 1;
+
+        if (isResolved) onSetSelectedTask(null);
+        else onSetSelectedTask((task) => ({ ...task, resolved: isResolved }));
+
+        onUpdateTasks((tasks) => {
+            const updatedTasks = tasks.map((task) =>
+                selectedTask.id === task.id
+                    ? {
+                          ...selectedTask,
+                          resolved: isResolved,
+                      }
+                    : task
+            );
+
+            encodeAndSave("tasks", updatedTasks);
+
+            return updatedTasks;
+        });
+    }
+
+    useEffect(() => {
+        setTaskTitle(selectedTask.title);
+        setTaskDescription(selectedTask.description);
+    }, [selectedTask]);
 
     return (
         <form className="form-edit-task">
@@ -71,15 +103,26 @@ export default function HomeTaskDetails({ selectedTask, onSetSelectedTask, onUpd
                     onChange={handleTaskDescriptionChange}
                 ></textarea>
             </div>
-            <div className="div-form-control-btns-container grid-2-columns">
+            <div className="div-form-control-btns-container grid-3-columns">
                 <button className="btn btn-danger" type="button" onClick={handleDeleteTask}>
                     <ion-icon src={iconTrash2Src}></ion-icon>
                     <span>Delete</span>
                 </button>
-                <button className="btn btn-primary" type="button" onClick={handleUpdateTask}>
+                <button className="btn btn-warning" type="button" onClick={handleUpdateTask}>
                     <ion-icon src={iconEdit2Src}></ion-icon>
                     <span>Update</span>
                 </button>
+                {selectedTask.resolved ? (
+                    <button className="btn btn-danger" type="button" onClick={handleResolveTask} data-resolved="0">
+                        <ion-icon src={iconCloseSrc}></ion-icon>
+                        <span>Backtrack</span>
+                    </button>
+                ) : (
+                    <button className="btn btn-primary" type="button" onClick={handleResolveTask} data-resolved="1">
+                        <ion-icon src={iconCheckSrc}></ion-icon>
+                        <span>Resolve</span>
+                    </button>
+                )}
             </div>
         </form>
     );

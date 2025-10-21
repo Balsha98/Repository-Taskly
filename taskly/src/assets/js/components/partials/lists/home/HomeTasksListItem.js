@@ -1,7 +1,5 @@
 export default function HomeTasksListItem({ task, selectedTask, onSetSelectedTask }) {
-    function handleSelectedTask() {
-        onSetSelectedTask(task);
-    }
+    const handleSelectedTask = () => onSetSelectedTask(task);
 
     return (
         <li
@@ -11,8 +9,11 @@ export default function HomeTasksListItem({ task, selectedTask, onSetSelectedTas
             onClick={handleSelectedTask}
             data-task-id={task.id}
         >
-            <p>{task.title ?? "Title"}</p>
-            <span>Created On: {task.date ?? "Date"}</span>
+            <div className="div-home-overview-grid-sidebar-task-list-item-data-container">
+                <p>{task.title ?? "Title"}</p>
+                <span>Created On: {task.date ?? "Date"}</span>
+            </div>
+            {task.resolved && <span className="span-task-list-item-resolved">&nbsp;</span>}
         </li>
     );
 }

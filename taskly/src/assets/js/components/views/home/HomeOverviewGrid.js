@@ -15,9 +15,7 @@ import iconArrowLeftSrc from "../../../../media/icons/arrow-left.svg";
 export default function HomeOverviewGrid({ showAddTaskPopup, onShowAddTaskPopup, tasks, onUpdateTasks }) {
     const [selectedTask, setSelectedTask] = useState(null);
 
-    function handleCloseTaskDetails() {
-        setSelectedTask(null);
-    }
+    const handleCloseTaskDetails = () => setSelectedTask(null);
 
     return (
         <>
