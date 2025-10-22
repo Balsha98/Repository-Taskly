@@ -1,0 +1,98 @@
+/* TASKS OVERVIEW CONTAINER */
+.div-tasks-overview-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.2rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.8rem;
+}
+
+/* TASKS OVERVIEW TASKS LIST CONTAINER */
+.div-tasks-overview-tasks-list-container {
+    flex-grow: 1;
+    position: relative;
+    height: calc((5 * 4.8rem) + (4 * 0.8rem));
+}
+
+/* TASKS OVERVIEW TASKS LIST */
+.tasks-overview-tasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    height: inherit;
+    overflow-y: scroll;
+}
+
+.tasks-overview-tasks-list::-webkit-scrollbar {
+    display: none;
+}
+
+/* TASKS OVERVIEW TASKS LIST ITEM */
+.tasks-overview-tasks-list-item {
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.2rem;
+    height: 4.8rem;
+    padding: 0.8rem 1.6rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.tasks-overview-tasks-list-item:hover,
+.active-tasks-list-item {
+    opacity: var(--opacity-md);
+}
+
+/* TASKS OVERVIEW TASKS LIST ITEM BEFORE */
+.tasks-overview-tasks-list-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.2rem;
+    background-color: var(--primary);
+    border-radius: 0.4rem 0.4rem 0 0;
+}
+
+/* HOME OVERVIEW TASKS LIST ITEM DATA CONTAINER */
+.div-tasks-overview-tasks-list-item-data-container p {
+    font-size: 1.4rem;
+}
+
+.div-tasks-overview-tasks-list-item-data-container span {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* SPAN RESOLVED TASKS LIST ITEM  */
+.span-resolved-tasks-list-item {
+    position: absolute;
+    bottom: 0.4rem;
+    right: 0.4rem;
+}
+
+.span-resolved-tasks-list-item ion-icon {
+    font-size: 1.4rem;
+    color: var(--primary);
+}
+
+/* TASKS OVERVIEW CONTAINER FOOTER */
+.div-tasks-overview-container > footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.div-tasks-overview-container > footer button {
+    width: fit-content;
+    padding: 0.8rem 1.6rem;
+}
+
+.div-tasks-overview-container > footer p {
+    font-size: 1.4rem;
+}
