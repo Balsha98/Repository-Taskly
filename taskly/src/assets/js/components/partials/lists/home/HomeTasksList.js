@@ -3,7 +3,7 @@ import HomeTaskListItem from "./HomeTasksListItem";
 
 export default function HomeTasksList({ tasks, selectedTask, onSetSelectedTask }) {
     return (
-        <ul className="home-overview-sidebar-task-list">
+        <ul className="home-overview-sidebar-tasks-list">
             {tasks.map((task) => (
                 <HomeTaskListItem
                     key={task.id}

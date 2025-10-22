@@ -26,7 +26,7 @@ export default function HomeOverviewGrid({ showAddTaskPopup, onShowAddTaskPopup,
                     <header>
                         <h2 className="heading-secondary">Tasks Overview</h2>
                     </header>
-                    <div className="div-home-overview-sidebar-task-list-container">
+                    <div className="div-home-overview-sidebar-tasks-list-container">
                         {tasks.length ? (
                             <HomeTasksList
                                 tasks={tasks}

@@ -2,22 +2,22 @@
 import iconCheckCircleSrc from "../../../../../media/icons/check-circle.svg";
 
 export default function HomeTasksListItem({ task, selectedTask, onSetSelectedTask }) {
-    const handleSelectedTask = () => onSetSelectedTask(task);
+    const handleSetSelectedTask = () => onSetSelectedTask(task);
 
     return (
         <li
-            className={`home-overview-sidebar-task-list-item ${
-                task.id === selectedTask?.id ? "active-task-list-item" : ""
+            className={`home-overview-sidebar-tasks-list-item ${
+                task.id === selectedTask?.id ? "active-tasks-list-item" : ""
             }`}
-            onClick={handleSelectedTask}
+            onClick={handleSetSelectedTask}
             data-task-id={task.id}
         >
-            <div className="div-home-overview-sidebar-task-list-item-data-container">
+            <div className="div-home-overview-sidebar-tasks-list-item-data-container">
                 <p>{task.title ?? "Title"}</p>
                 <span>Created On: {task.date ?? "Date"}</span>
             </div>
             {task.resolved && (
-                <span className="span-resolved-task-list-item">
+                <span className="span-resolved-tasks-list-item">
                     <ion-icon src={iconCheckCircleSrc}></ion-icon>
                 </span>
             )}
