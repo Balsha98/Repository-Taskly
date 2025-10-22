@@ -1,13 +1,13 @@
-/* HOME OVERVIEW GRID */
-.div-home-overview-grid-container {
+/* HOME OVERVIEW */
+.div-home-overview-container {
     display: grid;
     grid-template-columns: 35fr 65fr;
     column-gap: 2.4rem;
     height: fit-content;
 }
 
-/* HOME OVERVIEW GRID SIDEBAR */
-.div-home-overview-grid-sidebar {
+/* HOME OVERVIEW SIDEBAR */
+.div-home-overview-sidebar {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
@@ -16,15 +16,15 @@
     border-radius: 0.8rem;
 }
 
-/* HOME OVERVIEW GRID SIDEBAR TASK LIST CONTAINER */
-.div-home-overview-grid-sidebar-task-list-container {
+/* HOME OVERVIEW SIDEBAR TASK LIST CONTAINER */
+.div-home-overview-sidebar-task-list-container {
     flex-grow: 1;
     position: relative;
     height: calc((5 * 4.8rem) + (4 * 0.8rem));
 }
 
-/* HOME OVERVIEW GRID SIDEBAR TASK LIST */
-.home-overview-grid-sidebar-task-list {
+/* HOME OVERVIEW SIDEBAR TASK LIST */
+.home-overview-sidebar-task-list {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
@@ -32,12 +32,12 @@
     overflow-y: scroll;
 }
 
-.home-overview-grid-sidebar-task-list::-webkit-scrollbar {
+.home-overview-sidebar-task-list::-webkit-scrollbar {
     display: none;
 }
 
-/* HOME OVERVIEW GRID SIDEBAR TASK LIST ITEM */
-.home-overview-grid-sidebar-task-list-item {
+/* HOME OVERVIEW SIDEBAR TASK LIST ITEM */
+.home-overview-sidebar-task-list-item {
     flex-shrink: 0;
     position: relative;
     display: flex;
@@ -51,13 +51,13 @@
     cursor: pointer;
 }
 
-.home-overview-grid-sidebar-task-list-item:hover,
+.home-overview-sidebar-task-list-item:hover,
 .active-task-list-item {
     opacity: var(--opacity-md);
 }
 
-/* HOME OVERVIEW GRID SIDEBAR TASK LIST ITEM BEFORE */
-.home-overview-grid-sidebar-task-list-item::before {
+/* HOME OVERVIEW SIDEBAR TASK LIST ITEM BEFORE */
+.home-overview-sidebar-task-list-item::before {
     content: "";
     position: absolute;
     top: 0;
@@ -68,12 +68,12 @@
     border-radius: 0 0.4rem 0.4rem 0;
 }
 
-/* HOME OVERVIEW GRID SIDEBAR TASK LIST ITEM DATA CONTAINER */
-.div-home-overview-grid-sidebar-task-list-item-data-container p {
+/* HOME OVERVIEW SIDEBAR TASK LIST ITEM DATA CONTAINER */
+.div-home-overview-sidebar-task-list-item-data-container p {
     font-size: 1.4rem;
 }
 
-.div-home-overview-grid-sidebar-task-list-item-data-container span {
+.div-home-overview-sidebar-task-list-item-data-container span {
     font-size: 1.2rem;
     font-style: italic;
 }
@@ -90,8 +90,8 @@
     color: var(--primary);
 }
 
-/* HOME OVERVIEW GRID DETAILS */
-.div-home-overview-grid-details {
+/* HOME OVERVIEW DETAILS */
+.div-home-overview-details {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -101,16 +101,9 @@
     border-radius: 0.8rem;
 }
 
-/* HOME OVERVIEW GRID DETAILS HEADER */
-.div-home-overview-grid-details > header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-.div-home-overview-grid-details > header button {
-    font-size: 1.6rem;
-    color: var(--gray-shade);
+/* HOME OVERVIEW DETAILS HEADER */
+.div-home-overview-details > header {
+    text-align: right;
 }
 
 /* FORM EDIT TASK */
@@ -126,8 +119,9 @@
     z-index: 2;
 }
 
-/* FORM CONTROL BUTTONS CONTAINER */
-.div-form-control-btns-container {
+/* FORM CONTROL BUTTONS CONTAINER/INNER */
+.div-form-control-btns-container,
+.div-inner-form-control-btns-container {
     display: grid;
     column-gap: 1.2rem;
     width: 100%;

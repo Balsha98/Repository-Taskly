@@ -7,15 +7,12 @@ import HomeTasksList from "../../partials/lists/home/HomeTasksList";
 import NoTaskSelectedSign from "../../partials/signs/NoTaskSelectedSign";
 import HomeTaskDetails from "./HomeTaskDetails";
 // IMPORTED STYLES
-import "../../../../css/views/home/home-overview-grid.css";
+import "../../../../css/views/home/home-overview.css";
 // IMPORTED ICONS
 import iconPlusSrc from "../../../../media/icons/plus.svg";
-import iconArrowLeftSrc from "../../../../media/icons/arrow-left.svg";
 
 export default function HomeOverviewGrid({ showAddTaskPopup, onShowAddTaskPopup, tasks, onUpdateTasks }) {
     const [selectedTask, setSelectedTask] = useState(null);
-
-    const handleCloseTaskDetails = () => setSelectedTask(null);
 
     return (
         <>
@@ -24,12 +21,12 @@ export default function HomeOverviewGrid({ showAddTaskPopup, onShowAddTaskPopup,
                 onShowAddTaskPopup={onShowAddTaskPopup}
                 onUpdateTasks={onUpdateTasks}
             />
-            <div className="div-home-overview-grid-container">
-                <div className="div-home-overview-grid-sidebar">
+            <div className="div-home-overview-container">
+                <div className="div-home-overview-sidebar">
                     <header>
                         <h2 className="heading-secondary">Tasks Overview</h2>
                     </header>
-                    <div className="div-home-overview-grid-sidebar-task-list-container">
+                    <div className="div-home-overview-sidebar-task-list-container">
                         {tasks.length ? (
                             <HomeTasksList
                                 tasks={tasks}
@@ -47,11 +44,8 @@ export default function HomeOverviewGrid({ showAddTaskPopup, onShowAddTaskPopup,
                         </button>
                     </footer>
                 </div>
-                <div className="div-home-overview-grid-details">
+                <div className="div-home-overview-details">
                     <header>
-                        <button className="btn-icon" onClick={handleCloseTaskDetails}>
-                            <ion-icon src={iconArrowLeftSrc}></ion-icon>
-                        </button>
                         <h2 className="heading-secondary">Task Details</h2>
                     </header>
                     {selectedTask ? (
