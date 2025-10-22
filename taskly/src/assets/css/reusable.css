@@ -4,6 +4,7 @@
     top: 0;
     right: 2.4rem;
     width: 3.2rem;
+    aspect-ratio: 1 / 1;
     font-size: 1.4rem;
     color: var(--white);
     background-color: var(--danger);
@@ -116,7 +117,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    aspect-ratio: 1 / 1;
     border-radius: 0.4rem;
 }
 

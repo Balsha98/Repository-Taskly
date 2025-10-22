@@ -2,7 +2,8 @@
 import { useState } from "react";
 // IMPORTED COMPONENTS
 import Header from "./partials/Header";
-import HomeOverviewGrid from "./views/home/HomeOverviewGrid";
+import HomeOverview from "./views/home/HomeOverview";
+import TasksOverview from "./views/tasks/TasksOverview";
 // IMPORTED HELPERS
 import { fetchAndDecode } from "../helpers/Encoder";
 // IMPORTED STYLES
@@ -27,12 +28,16 @@ export default function App() {
     return (
         <>
             <Header activeView={activeView} onSwitchView={setActiveView} />
-            <HomeOverviewGrid
-                showAddTaskPopup={showAddTaskPopup}
-                onShowAddTaskPopup={handleShowAddTaskPopup}
-                tasks={tasks}
-                onUpdateTasks={setTasks}
-            />
+            {activeView === 1 ? (
+                <HomeOverview
+                    showAddTaskPopup={showAddTaskPopup}
+                    onShowAddTaskPopup={handleShowAddTaskPopup}
+                    tasks={tasks}
+                    onUpdateTasks={setTasks}
+                />
+            ) : (
+                <TasksOverview />
+            )}
         </>
     );
 }
