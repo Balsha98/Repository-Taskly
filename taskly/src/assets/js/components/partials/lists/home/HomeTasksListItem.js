@@ -6,13 +6,13 @@ export default function HomeTasksListItem({ task, selectedTask, onSetSelectedTas
 
     return (
         <li
-            className={`home-overview-grid-sidebar-task-list-item ${
+            className={`home-overview-sidebar-task-list-item ${
                 task.id === selectedTask?.id ? "active-task-list-item" : ""
             }`}
             onClick={handleSelectedTask}
             data-task-id={task.id}
         >
-            <div className="div-home-overview-grid-sidebar-task-list-item-data-container">
+            <div className="div-home-overview-sidebar-task-list-item-data-container">
                 <p>{task.title ?? "Title"}</p>
                 <span>Created On: {task.date ?? "Date"}</span>
             </div>

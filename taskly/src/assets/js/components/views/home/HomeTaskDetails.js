@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 // IMPORTED HELPERS
 import { encodeAndSave } from "../../../helpers/Encoder";
 // IMPORTED ICONS
+import iconArrowLeftSrc from "../../../../media/icons/arrow-left.svg";
 import iconTrash2Src from "../../../../media/icons/trash-2.svg";
 import iconEdit2Src from "../../../../media/icons/edit-2.svg";
 import iconCloseSrc from "../../../../media/icons/x.svg";
@@ -15,6 +16,8 @@ export default function HomeTaskDetails({ selectedTask, onSetSelectedTask, onUpd
     const handleTaskTitleChange = (e) => setTaskTitle(e.target.value);
 
     const handleTaskDescriptionChange = (e) => setTaskDescription(e.target.value);
+
+    const handleCloseTask = () => onSetSelectedTask(null);
 
     function handleDeleteTask() {
         onSetSelectedTask(null);
@@ -103,15 +106,18 @@ export default function HomeTaskDetails({ selectedTask, onSetSelectedTask, onUpd
                     onChange={handleTaskDescriptionChange}
                 ></textarea>
             </div>
-            <div className="div-form-control-btns-container grid-3-columns">
-                <button className="btn btn-danger" type="button" onClick={handleDeleteTask}>
-                    <ion-icon src={iconTrash2Src}></ion-icon>
-                    <span>Delete</span>
-                </button>
-                <button className="btn btn-warning" type="button" onClick={handleUpdateTask}>
-                    <ion-icon src={iconEdit2Src}></ion-icon>
-                    <span>Update</span>
-                </button>
+            <div className="div-form-control-btns-container grid-2-columns">
+                <div className="div-inner-form-control-btns-container grid-3-columns">
+                    <button className="btn btn-danger" type="button" onClick={handleCloseTask}>
+                        <ion-icon src={iconArrowLeftSrc}></ion-icon>
+                    </button>
+                    <button className="btn btn-danger" type="button" onClick={handleDeleteTask}>
+                        <ion-icon src={iconTrash2Src}></ion-icon>
+                    </button>
+                    <button className="btn btn-warning" type="button" onClick={handleUpdateTask}>
+                        <ion-icon src={iconEdit2Src}></ion-icon>
+                    </button>
+                </div>
                 {selectedTask.resolved ? (
                     <button className="btn btn-danger" type="button" onClick={handleResolveTask} data-resolved="0">
                         <ion-icon src={iconCloseSrc}></ion-icon>
