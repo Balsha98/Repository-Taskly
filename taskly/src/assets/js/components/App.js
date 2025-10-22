@@ -36,7 +36,7 @@ export default function App() {
                     onUpdateTasks={setTasks}
                 />
             ) : (
-                <TasksOverview />
+                <TasksOverview tasks={tasks} />
             )}
         </>
     );
