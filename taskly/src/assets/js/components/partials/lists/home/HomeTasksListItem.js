@@ -1,5 +1,6 @@
 // IMPORTED ICONS
 import iconCheckCircleSrc from "../../../../../media/icons/check-circle.svg";
+import iconXCircleSrc from "../../../../../media/icons/x-circle.svg";
 
 export default function HomeTasksListItem({ task, selectedTask, onSetSelectedTask }) {
     const handleSetSelectedTask = () => onSetSelectedTask(task);
@@ -7,8 +8,8 @@ export default function HomeTasksListItem({ task, selectedTask, onSetSelectedTas
     return (
         <li
             className={`home-overview-sidebar-tasks-list-item ${
-                task.id === selectedTask?.id ? "active-tasks-list-item" : ""
-            }`}
+                task.id === selectedTask?.id && "active-home-overview-tasks-list-item"
+            } ${!task.resolved && "backtracked-home-overview-tasks-list-item"}`}
             onClick={handleSetSelectedTask}
             data-task-id={task.id}
         >
@@ -16,9 +17,13 @@ export default function HomeTasksListItem({ task, selectedTask, onSetSelectedTas
                 <p className="line-clamp clamp-1">{task.title ?? "Title"}</p>
                 <span>Created On: {task.date ?? "Date"}</span>
             </div>
-            {task.resolved && (
+            {task.resolved ? (
                 <span className="span-resolved-task">
                     <ion-icon src={iconCheckCircleSrc}></ion-icon>
+                </span>
+            ) : (
+                <span className="span-backtracked-task">
+                    <ion-icon src={iconXCircleSrc}></ion-icon>
                 </span>
             )}
         </li>
