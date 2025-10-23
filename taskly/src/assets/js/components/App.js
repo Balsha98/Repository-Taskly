@@ -36,7 +36,12 @@ export default function App() {
                     onUpdateTasks={setTasks}
                 />
             ) : (
-                <TasksOverview tasks={tasks} />
+                <TasksOverview
+                    showAddTaskPopup={showAddTaskPopup}
+                    onShowAddTaskPopup={handleShowAddTaskPopup}
+                    tasks={tasks}
+                    onUpdateTasks={setTasks}
+                />
             )}
         </>
     );
