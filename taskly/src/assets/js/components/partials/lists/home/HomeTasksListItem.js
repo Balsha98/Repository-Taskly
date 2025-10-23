@@ -17,7 +17,7 @@ export default function HomeTasksListItem({ task, selectedTask, onSetSelectedTas
                 <span>Created On: {task.date ?? "Date"}</span>
             </div>
             {task.resolved && (
-                <span className="span-resolved-tasks-list-item">
+                <span className="span-resolved-task">
                     <ion-icon src={iconCheckCircleSrc}></ion-icon>
                 </span>
             )}
