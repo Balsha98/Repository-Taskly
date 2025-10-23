@@ -13,7 +13,7 @@ export default function HomeTasksListItem({ task, selectedTask, onSetSelectedTas
             data-task-id={task.id}
         >
             <div className="div-home-overview-sidebar-tasks-list-item-data-container">
-                <p>{task.title ?? "Title"}</p>
+                <p className="line-clamp clamp-1">{task.title ?? "Title"}</p>
                 <span>Created On: {task.date ?? "Date"}</span>
             </div>
             {task.resolved && (
