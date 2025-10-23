@@ -51,7 +51,7 @@
     border-radius: 0.4rem 0.4rem 0 0;
 }
 
-.item-backtracked-task::after {
+.backtracked-tasks-overview-tasks-list-item::after {
     background-color: var(--danger);
 }
 
