@@ -7,10 +7,14 @@ import "../../../../css/views/tasks/tasks-overview.css";
 // IMPORTED ICONS
 import iconPlusSrc from "../../../../media/icons/plus.svg";
 
-export default function TasksOverview({ tasks }) {
+export default function TasksOverview({ showAddTaskPopup, onShowAddTaskPopup, tasks, onUpdateTasks }) {
     return (
         <>
-            {/* <AddTaskPopup /> */}
+            <AddTaskPopup
+                showAddTaskPopup={showAddTaskPopup}
+                onShowAddTaskPopup={onShowAddTaskPopup}
+                onUpdateTasks={onUpdateTasks}
+            />
             <div className="div-tasks-overview-container">
                 <header>
                     <h2 className="heading-secondary">Tasks List Overview</h2>
@@ -19,7 +23,7 @@ export default function TasksOverview({ tasks }) {
                     {tasks.length ? <TaskDropdownList tasks={tasks} /> : <NoTasksListSign />}
                 </div>
                 <footer>
-                    <button className="btn btn-primary">
+                    <button className="btn btn-primary" onClick={onShowAddTaskPopup} data-toggle="1">
                         <ion-icon src={iconPlusSrc}></ion-icon>
                         <span>Add New Task</span>
                     </button>

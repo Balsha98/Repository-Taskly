@@ -1,19 +1,21 @@
-export default function TaskDropdownListItem({ task, selectedTask, onSetSelectedTask }) {
-    const handleSetSelectedTask = () => onSetSelectedTask(task);
+// IMPORTED ICONS
+import iconCheckCircleSrc from "../../../../../media/icons/check-circle.svg";
+import iconXCircleSrc from "../../../../../media/icons/x-circle.svg";
 
+export default function TaskDropdownListItem({ task }) {
     return (
-        <li
-            className={`tasks-overview-tasks-list-item ${task.id === selectedTask?.id ? "active-tasks-list-item" : ""}`}
-            onClick={handleSetSelectedTask}
-            data-task-id={task.id}
-        >
+        <li className={`tasks-overview-tasks-list-item ${!task.resolved && "item-backtracked-task"}`}>
             <div className="div-tasks-overview-tasks-list-item-data-container">
                 <p>{task.title ?? "Title"}</p>
                 <span>Created On: {task.date ?? "Date"}</span>
             </div>
-            {task.resolved && (
-                <span className="span-resolved-tasks-list-item">
-                    <ion-icon src={""}></ion-icon>
+            {task.resolved ? (
+                <span className="span-resolved-task">
+                    <ion-icon src={iconCheckCircleSrc}></ion-icon>
+                </span>
+            ) : (
+                <span className="span-backtracked-task">
+                    <ion-icon src={iconXCircleSrc}></ion-icon>
                 </span>
             )}
         </li>
