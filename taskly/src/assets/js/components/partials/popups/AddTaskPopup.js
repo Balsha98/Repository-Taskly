@@ -34,7 +34,8 @@ export default function AddTaskPopup({ showAddTaskPopup, onShowAddTaskPopup, onU
                 id: taskID,
                 title: taskTitle,
                 description: taskDescription,
-                date: formattedDate,
+                dateFormatted: formattedDate,
+                date: date,
                 resolved: false,
             };
             const updatedTasks = [...tasks, newTask];

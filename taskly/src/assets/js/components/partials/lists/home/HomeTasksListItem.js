@@ -15,7 +15,7 @@ export default function HomeTasksListItem({ task, selectedTask, onSetSelectedTas
         >
             <div className="div-home-overview-sidebar-tasks-list-item-data-container">
                 <p className="line-clamp clamp-1">{task.title ?? "Title"}</p>
-                <span>Created On: {task.date ?? "Date"}</span>
+                <span>Created On: {task.dateFormatted ?? "Date"}</span>
             </div>
             {task.resolved ? (
                 <span className="span-resolved-task">

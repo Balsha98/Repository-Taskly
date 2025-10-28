@@ -11,7 +11,7 @@ export default function TaskDropdownListItem({ task }) {
         >
             <div className="div-tasks-overview-tasks-list-item-data-container">
                 <p>{task.title ?? "Title"}</p>
-                <span>Created On: {task.date ?? "Date"}</span>
+                <span>Created On: {task.dateFormatted ?? "Date"}</span>
             </div>
             {task.resolved ? (
                 <span className="span-resolved-task">
