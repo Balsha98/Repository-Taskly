@@ -14,7 +14,14 @@ import "../../css/reusable.css";
 export default function App() {
     const [activeView, setActiveView] = useState(1);
     const [showAddTaskPopup, setShowAddTaskPopup] = useState(false);
-    const [tasks, setTasks] = useState(() => fetchAndDecode("tasks") ?? []);
+    const [tasks, setTasks] = useState(() => {
+        const tasks = fetchAndDecode("tasks") ?? [];
+
+        // Sort tasks by date if there is at least 2 tasks.
+        if (tasks.length && tasks.length > 1) tasks.sort((task1, task2) => task2.date - task1.date);
+
+        return tasks;
+    });
 
     const handleShowAddTaskPopup = (e) => {
         if (e) {
