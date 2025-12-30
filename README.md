@@ -1,6 +1,6 @@
 # Taskly - ToDo Web Application
 
-A simple and intuitive single-page to-do application built with React. Manage your tasks efficiently with create, update, and delete functionality—no login required!
+A simple and intuitive single-page to-do application built with React. Manage your tasks efficiently with create, update, and delete functionality - no login required!
 
 ## Features
 
