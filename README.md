@@ -19,7 +19,7 @@ A simple and intuitive single-page to-do application built with React. Manage yo
 
 ## Tech Stack
 
--   **React** - UI library & Component Architecture
+-   **React** - UI Library & Component Architecture
 -   **CSS3** - Styling & Layout
 -   **localStorage** - Client-Side Data Persistence
 -   **Netlify** - Hosting & Deployment
