@@ -96,7 +96,7 @@ Repository-Taskly/
 │   │
 │   ├── public/         # Static files.
 │   │
-│   └── src/            # Source files.
+│   └── source/            # Source files.
 │       │
 │       ├── assets/     # Application assets.
 │       │   │
